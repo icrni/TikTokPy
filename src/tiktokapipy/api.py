@@ -425,7 +425,7 @@ class TikTokAPI:
             )
         name, user = list(response.user_module.users.items())[0]
         user.stats = response.user_module.stats[name]
-        user.videos = self._create_video_iter(response, api_extras, video_limit)
+        user.videos = list(response.item_module.values())
 
         return user
 
