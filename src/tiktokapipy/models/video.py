@@ -121,13 +121,17 @@ class LightVideo(CamelCaseModel):
     """Stats about the video"""
     create_time: datetime
 
+    desc: str
+    """Video description"""
+
+    video: VideoData
 
 class Video(LightVideo):
     #####################
     # Content and stats #
     #####################
-    desc: str
-    """Video description"""
+    #desc: str
+    #"""Video description"""
     diversification_labels: Optional[List[str]]
     """Tags/Categories applied to the video"""
     challenges: Optional[List[LightChallenge]]
@@ -135,7 +139,7 @@ class Video(LightVideo):
     We don't want to grab anything more than the title so we can generate the lazy challenge getter.
     :autodoc-skip:
     """
-    video: VideoData
+    #video: VideoData
     music: MusicData
     # digged: bool
     # item_comment_status: int
